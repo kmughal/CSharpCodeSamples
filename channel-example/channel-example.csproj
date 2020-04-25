@@ -6,4 +6,8 @@
     <RootNamespace>channel_example</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Threading.Channels" Version="4.7.0" />
+  </ItemGroup>
+
 </Project>

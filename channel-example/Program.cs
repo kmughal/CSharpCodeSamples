@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System;
 using System.Threading.Tasks;
+using System.Threading.Channels;
 
 namespace SimpleRawChannelExample
 {
@@ -9,7 +10,41 @@ namespace SimpleRawChannelExample
     {
         static async Task Main(string[] args)
         {
-            await ChannelExample();
+            //await ChannelExample();
+            await ChannelExample1();
+        }
+
+        static async Task ChannelExample1()
+        {
+            var ch = Channel.CreateBounded<int>(2);
+
+            _ = Task.Run(async () =>
+            {
+               // int i = 0;
+                for (int i = 0; i < 10 ; i++)
+                {
+                    await Task.Delay(100);
+                    await ch.Writer.WriteAsync(i);
+                }
+
+                ch.Writer.Complete();
+
+                // while(await ch.Writer.WaitToWriteAsync()) {
+                //     if(ch.Writer.TryWrite(i)) {
+                //         i++;
+                //     }
+                //     await Task.Delay(500);
+                // }
+            });
+            // while (true)
+            // {
+            //     Console.WriteLine(await ch.Reader.ReadAsync());
+            // }
+            await foreach (var item in ch.Reader.ReadAllAsync())
+            {
+                Console.WriteLine("Read value: {0}", item);
+            }
+            Console.WriteLine("DONE");
         }
 
         static async Task ChannelExample()
