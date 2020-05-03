@@ -6,7 +6,7 @@
 
     public static class TrackProgress
     {
-        static void Run(Action action, TextWriter tw)
+        public static void Run(Action action, TextWriter tw)
         {
             NullCheck(action);
             NullCheck(tw);
