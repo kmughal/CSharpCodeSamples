@@ -4,4 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Title>Total Runtime</Title>
+    <PackageId>TotalRunTime</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Khurram Mughal</Authors>
+    <Company>kmughal solutions ltd</Company>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryURL>https://github.com/kmughal/CSharpCodeSamples/tree/master/TrackProgress</RepositoryURL>
+    <Description>
+     A simple package to measure the total ellapse time for your method.
+    </Description>
+  </PropertyGroup>
+
 </Project>
