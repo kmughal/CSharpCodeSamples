@@ -6,6 +6,16 @@
 
     public static class TrackProgress
     {
+        public static void RunCommand(string command, string args = null)
+        {
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = true;
+            proc.StartInfo.FileName = command;
+            if (args != null) proc.StartInfo.Arguments = args;
+            proc.Start();
+            proc.WaitForExit();
+        }
+
         public static void Run(Action action, TextWriter tw)
         {
             NullCheck(action);

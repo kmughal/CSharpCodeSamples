@@ -7,7 +7,7 @@
   <PropertyGroup>
     <Title>Total Runtime</Title>
     <PackageId>TotalRunTime</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Khurram Mughal</Authors>
     <Company>kmughal solutions ltd</Company>
     <TargetFramework>netstandard2.0</TargetFramework>
