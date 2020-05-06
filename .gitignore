@@ -1,3 +1,6 @@
 obj
 bin
-*.logs
+*.log
+*.rsa
+launch.json
+tasks.json
