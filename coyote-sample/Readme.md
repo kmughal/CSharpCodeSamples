@@ -26,3 +26,5 @@ coyote test ./bin/Debug/netcoreapp2.0/coyote-sample.dll
 ```
 
 open the files that will contain the stacktrace information!
+
+For more information visit https://microsoft.github.io/coyote/
